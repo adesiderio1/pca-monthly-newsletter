@@ -6,6 +6,78 @@
   <title>Monthly Newsletter – October 2025</title>
 
   <style>
+
+    /* Sidebar button */
+.sidebar-container {
+  position: fixed;
+  top: 30%;
+  right: 0;
+  z-index: 1000;
+}
+
+.sidebar-button {
+  background-color: #800000;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem 0 0 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: -2px 2px 5px rgba(0,0,0,0.2);
+  transition: background 0.3s;
+}
+
+.sidebar-button:hover {
+  background-color: #a52a2a;
+}
+
+/* Sidebar panel */
+.sidebar-panel {
+  position: fixed;
+  top: 20%;
+  right: -260px;
+  width: 250px;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  border-left: 3px solid #800000;
+  box-shadow: -2px 2px 8px rgba(0,0,0,0.15);
+  border-radius: 0.5rem 0 0 0.5rem;
+  padding: 1rem;
+  transition: right 0.3s ease-in-out;
+}
+
+.sidebar-panel.open {
+  right: 0;
+}
+
+.sidebar-panel h3 {
+  margin-top: 0;
+  color: #800000;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-panel ul li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-panel ul li a {
+  color: #800000;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.sidebar-panel ul li a:hover {
+  text-decoration: underline;
+}
+
+    
     :root {
       --bg-page: #faf9f9;         /* light background */
       --bg-card: #ffffff;         /* white cards */
@@ -283,5 +355,26 @@
       <p>© Property Casualty Administration — Internal newsletter. All rights reserved.</p>
     </footer>
   </main>
+<!-- ========================= -->
+<!-- Sidebar: Previous Issues  -->
+<!-- ========================= -->
+<div class="sidebar-container">
+  <button class="sidebar-button" onclick="toggleSidebar()">☰ Previous Issues</button>
+  <div class="sidebar-panel" id="sidebarPanel">
+    <h3>Past Newsletters</h3>
+    <ul>
+      <li><a href="august-2025.html" target="_blank">August 2025</a></li>
+      <li><a href="july-2025.html" target="_blank">July 2025</a></li>
+      <li><a href="june-2025.html" target="_blank">June 2025</a></li>
+      <li><a href="may-2025.html" target="_blank">May 2025</a></li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  function toggleSidebar() {
+    document.getElementById("sidebarPanel").classList.toggle("open");
+  }
+</script>
 </body>
 </html>
