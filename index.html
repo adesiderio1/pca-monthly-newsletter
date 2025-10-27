@@ -72,5 +72,216 @@
 
     .meta-row {
       margin-top: 1rem;
-      font
-       
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .featured {
+      background-color: var(--bg-card);
+      border-left: 4px solid var(--accent);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .featured-label {
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .featured-headline {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .featured-desc {
+      font-size: 1rem;
+      color: var(--text-dim);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .section-hint {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+    }
+
+    .card-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    @media (min-width: 700px) {
+      .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .card-topline {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+
+    .card-headline {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .card-desc {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+    }
+
+    .links-box {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+    }
+
+    .links-title {
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .link-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .link-note {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      margin-top: 2rem;
+      line-height: 1.5;
+    }
+
+    hr.divider {
+      border: none;
+      border-top: 1px solid var(--border-card);
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="newsletter-header">
+      <span class="tag-month">September 2025</span>
+      <h1 class="title">Your Monthly Update</h1>
+      <p class="subtitle">Highlights, wins, and upcoming deadlines across teams.</p>
+      <div class="meta-row">
+        <span>Prepared by: Analytics & Ops</span>
+        <span>Published: Sep 30, 2025</span>
+      </div>
+    </header>
+
+    <section class="featured">
+      <div class="featured-label">Feature</div>
+      <div class="featured-headline">Claims Dashboard v2 launches with new insights</div>
+      <p class="featured-desc">
+        The redesigned claims dashboard introduces enhanced visuals, faster load times,
+        and a “High Exposure &gt; $1M” indicator. See the new dashboard and documentation below.
+      </p>
+      <a href="https://example.com/internal-dashboard" target="_blank" rel="noopener noreferrer">
+        View dashboard release notes →
+      </a>
+    </section>
+
+    <section>
+      <div class="section-header">
+        <h2 class="section-title">In This Issue</h2>
+        <div class="section-hint">Three quick updates.</div>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-topline">Operations</div>
+          <div class="card-headline">New reporting cutoff: 5th of each month</div>
+          <p class="card-desc">
+            Standardized monthly close timeline ensures all claim updates are finalized by the 5th.
+          </p>
+          <a href="https://example.com/monthly-close-policy" target="_blank" rel="noopener noreferrer">
+            Read the updated policy →
+          </a>
+        </article>
+
+        <article class="card">
+          <div class="card-topline">Compliance</div>
+          <div class="card-headline">AB218 tracking now by policy year</div>
+          <p class="card-desc">
+            Claims are now segmented by year for better transparency and reporting.
+          </p>
+          <a href="https://example.com/ab218-guidelines" target="_blank" rel="noopener noreferrer">
+            View guidelines →
+          </a>
+        </article>
+
+        <article class="card">
+          <div class="card-topline">People</div>
+          <div class="card-headline">Welcome our newest analyst</div>
+          <p class="card-desc">
+            Please welcome Jordan Rivera to the Analytics team, focusing on data hygiene and Power BI automation.
+          </p>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            Connect on LinkedIn →
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      <hr class="divider" />
+      <p>© 2025 Analytics & Ops — Internal newsletter. All rights reserved.</p>
+    </footer>
+  </main>
+</body>
+</html>
