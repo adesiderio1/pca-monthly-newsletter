@@ -298,12 +298,18 @@
       <div class="section-header">
         <h2 class="section-title">In This Issue</h2>
 
-        <!-- SORT BUTTON -->
-        <button id="sortButton" class="sort-btn">Sort A–Z</button>
+        <label class="sort-wrapper">
+          <span class="sort-label">Sort by:</span>
+          <select id="sortSelect" class="sort-select">
+            <option value="recent">Most recent date</option>
+            <option value="oldeset">Oldest date</option>
+            <option value="category">Category (A-Z)</option>
+          </select>
+        </label>
       </div>
 
       <div class="card-grid">
-        <article class="card">
+        <article class="card" data-date="2025-11-04>
           <div class="card-topline">Mergers & Acquisitions</div>
           <div class="card-headline">Arthur J. Gallagher acquires Surescape Insurance Services in Colorado</div>
 
@@ -313,7 +319,7 @@
           <a href="https://www.insurancejournal.com/news/west/2025/11/04/846375.htm" target="_blank">Read the article →</a>
         </article>
 
-        <article class="card">
+        <article class="card" data-date="2025-11-17">
           <div class="card-topline">Weather</div>
           <div class="card-headline">Los Angeles showers wane after record Southern California Rain</div>
 
@@ -323,7 +329,7 @@
           <a href="https://www.insurancejournal.com/news/west/2025/11/17/847943.htm" target="_blank">Read the article →</a>
         </article>
 
-        <article class="card">
+        <article class="card" data-date="2025-10-27">
           <div class="card-topline">Worker's Compensation</div>
           <div class="card-headline">Prepare your workers' comp claims strategy for 2026</div>
 
@@ -333,7 +339,7 @@
           <a href="https://info.businessinsurance.com/Paradigm-RP-November-2025.html" target="_blank">Read the report →</a>
         </article>
 
-        <article class="card">
+        <article class="card" data-date="2025-11-04">
           <div class="card-topline">Worker's Compensation</div>
           <div class="card-headline">California Workers' Comp outlook and what stakeholders need to know</div>
 
