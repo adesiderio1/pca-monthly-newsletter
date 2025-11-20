@@ -78,11 +78,11 @@
 }
     
     :root {
-      --bg-page: #faf9f9;         /* light background */
-      --bg-card: #ffffff;         /* white cards */
-      --accent: #800000;          /* maroon */
-      --text-main: #1a1a1a;       /* near-black text */
-      --text-dim: #555555;        /* muted gray text */
+      --bg-page: #faf9f9;        
+      --bg-card: #ffffff;        
+      --accent: #800000;         
+      --text-main: #1a1a1a;      
+      --text-dim: #555555;       
       --border-card: rgba(0,0,0,0.1);
       --radius-lg: 1rem;
     }
@@ -90,7 +90,7 @@
     * {
       box-sizing: border-box;
       margin: 0;
-      -webkit-font-smoothing: antialiased;
+      -webkit-font-smoothing: antaliased;
       text-rendering: optimizeLegibility;
     }
 
@@ -205,6 +205,23 @@
       color: var(--text-dim);
     }
 
+    /* SORT BUTTON */
+    .sort-btn {
+      background-color: #800000;
+      color: #fff;
+      padding: 0.4rem 0.8rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .sort-btn:hover {
+      background-color: #a52a2a;
+    }
+
     .card-grid {
       display: grid;
       gap: 1rem;
@@ -243,32 +260,6 @@
       color: var(--text-dim);
     }
 
-    .links-box {
-      background-color: var(--bg-card);
-      border: 1px solid var(--border-card);
-      border-radius: var(--radius-lg);
-      padding: 1.25rem;
-    }
-
-    .links-title {
-      font-weight: 700;
-      color: var(--accent);
-      margin-bottom: 0.75rem;
-    }
-
-    .link-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 0.75rem;
-    }
-
-    .link-note {
-      font-size: 0.8rem;
-      color: var(--text-dim);
-    }
-
     footer {
       text-align: center;
       font-size: 0.75rem;
@@ -284,6 +275,7 @@
     }
   </style>
 </head>
+
 <body>
   <main>
     <header class="newsletter-header">
@@ -299,52 +291,39 @@
     <section>
       <div class="section-header">
         <h2 class="section-title">In This Issue</h2>
+
+        <!-- SORT BUTTON -->
+        <button id="sortButton" class="sort-btn">Sort A–Z</button>
       </div>
+
       <div class="card-grid">
         <article class="card">
           <div class="card-topline">Mergers & Acquisitions</div>
           <div class="card-headline">Arthur J. Gallagher acquires Surescape Insurance Services in Colorado</div>
-          <p class="card-desc">
-            Surescape Insurance, a surety specialist insurance agency based in Colorado has been acquired by AJG.
-          </p>
-          <a href="https://www.insurancejournal.com/news/west/2025/11/04/846375.htm" target="_blank" rel="noopener noreferrer">
-            Read the article →
-          </a>
+          <p class="card-desc">Surescape Insurance, a surety specialist insurance agency based in Colorado has been acquired by AJG.</p>
+          <a href="https://www.insurancejournal.com/news/west/2025/11/04/846375.htm" target="_blank">Read the article →</a>
         </article>
 
         <article class="card">
           <div class="card-topline">Weather</div>
           <div class="card-headline">Los Angeles showers wane after record Southern California Rain</div>
-          <p class="card-desc">
-            After record rains in Los Angeles, showers seem to be winding down. 
-          </p>
-          <a href="https://www.insurancejournal.com/news/west/2025/11/17/847943.htm" target="_blank" rel="noopener noreferrer">
-            Read the article →
-          </a>
+          <p class="card-desc">After record rains in Los Angeles, showers seem to be winding down.</p>
+          <a href="https://www.insurancejournal.com/news/west/2025/11/17/847943.htm" target="_blank">Read the article →</a>
         </article>
 
         <article class="card">
           <div class="card-topline">Worker's Compensation</div>
           <div class="card-headline">Prepare your workers' comp claims strategy for 2026</div>
-          <p class="card-desc">
-            Report detailing strategies on handling work comp claims for upcoming year. 
-          </p>
-          <a href="https://info.businessinsurance.com/Paradigm-RP-November-2025.html" target="_blank" rel="noopener noreferrer">
-            Read the report →
-          </a>
+          <p class="card-desc">Report detailing strategies on handling work comp claims for upcoming year.</p>
+          <a href="https://info.businessinsurance.com/Paradigm-RP-November-2025.html" target="_blank">Read the report →</a>
         </article>
 
         <article class="card">
           <div class="card-topline">Worker's Compensation</div>
           <div class="card-headline">California Workers' Comp outlook and what stakeholders need to know</div>
-          <p class="card-desc">
-            Opinion article in regards to the state of workers compensation in California. 
-          </p>
-          <a href="https://www.insurancejournal.com/news/west/2025/11/04/846028.htm" target="_blank" rel="noopener noreferrer">
-            Read the article →
-          </a>
+          <p class="card-desc">Opinion article in regards to the state of workers compensation in California.</p>
+          <a href="https://www.insurancejournal.com/news/west/2025/11/04/846028.htm" target="_blank">Read the article →</a>
         </article>
-        
       </div>
     </section>
     
@@ -353,15 +332,16 @@
       <p>© Property Casualty Administration — Internal newsletter. All rights reserved.</p>
     </footer>
   </main>
+
 <!-- ========================= -->
-<!-- Sidebar: Previous Issues  -->
+<!-- Sidebar: Previous Issues -->
 <!-- ========================= -->
 <div class="sidebar-container">
   <button class="sidebar-button" onclick="toggleSidebar()">☰ Previous Issues</button>
   <div class="sidebar-panel" id="sidebarPanel">
     <h3>Past Newsletters</h3>
     <ul>
-       <li><a href="standardtemplate.html" target="_blank">November 2025</a></li>
+      <li><a href="standardtemplate.html" target="_blank">November 2025</a></li>
     </ul>
   </div>
 </div>
@@ -370,6 +350,28 @@
   function toggleSidebar() {
     document.getElementById("sidebarPanel").classList.toggle("open");
   }
+
+  // ==========================
+  // SORTING LOGIC
+  // ==========================
+  let ascending = true;
+
+  document.getElementById("sortButton").addEventListener("click", () => {
+    const grid = document.querySelector(".card-grid");
+    const cards = Array.from(document.querySelectorAll(".card"));
+
+    cards.sort((a, b) => {
+      const titleA = a.querySelector(".card-headline").textContent.trim();
+      const titleB = b.querySelector(".card-headline").textContent.trim();
+      return ascending ? titleA.localeCompare(titleB) : titleB.localeCompare(titleA);
+    });
+
+    cards.forEach(card => grid.appendChild(card));
+
+    ascending = !ascending;
+    document.getElementById("sortButton").textContent = ascending ? "Sort A–Z" : "Sort Z–A";
+  });
 </script>
+
 </body>
 </html>
