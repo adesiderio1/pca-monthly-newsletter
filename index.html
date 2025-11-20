@@ -374,36 +374,37 @@
 
     const sortSelect = document.getElementById("sortSelect");
 
-    sortSelect.addEventListener("change", () => {
-      const grid = document.querySelector(".card-grid");
-      const cards = Array.from(document.querySelectorAll(".card"));
+sortSelect.addEventListener("change", () => {
+  const grid = document.querySelector(".card-grid");
+  const cards = Array.from(document.querySelectorAll(".card"));
 
-      const mode = sortSelect.value;
+  const mode = sortSelect.value;
 
-      cards.sort((a, b) => {
-        const dateA = new Date(a.dataset.date);
-        const dateB = new Date(b.dataset.date);
-        const catA = a.querySelector(".card-topline").textContent.trim();
-        const catB = b.querySelector(".card-topline").textContent.trim();
+  cards.sort((a, b) => {
+    const dateA = new Date(a.dataset.date);
+    const dateB = new Date(b.dataset.date);
+    const catA = a.querySelector(".card-topline").textContent.trim();
+    const catB = b.querySelector(".card-topline").textContent.trim();
 
-        if (mode === "recent") {
-          // Newest first
-          return dateB - dateA;
-        } else if (mode === "oldest") {
-          // Oldest first
-          return dateA - dateB;
-        } else if (mode === "category") {
-          // Category A–Z
-          return catA.localeCompare(catB);
-        } else if (mode === "categoryZA") {
-          
-          return catB.localeCompare(catA);
-        }
-        return 0;
-      });
+    if (mode === "recent") {
+      return dateB - dateA; // newest first
+    } 
+    else if (mode === "oldest") {
+      return dateA - dateB; // oldest first
+    } 
+    else if (mode === "category") {
+      return catA.localeCompare(catB); // A–Z
+    }
+    else if (mode === "categoryZA") {
+      return catB.localeCompare(catA); // Z–A
+    }
 
-      cards.forEach(card => grid.appendChild(card));
-    });
+    return 0;
+  });
+
+  cards.forEach(card => grid.appendChild(card));
+});
+    
   </script>
 
 </body>
