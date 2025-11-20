@@ -308,7 +308,7 @@
             <option value="recent">Newest Date</option>
             <option value="oldest">Oldest date</option>
             <option value="category">Category (A–Z)</option>
-            <option value="category">Category (Z-A)</option>
+            <option value="categoryZA">Category (Z–A)</option>
           </select>
         </label>
       </div>
@@ -374,37 +374,36 @@
 
     const sortSelect = document.getElementById("sortSelect");
 
-sortSelect.addEventListener("change", () => {
-  const grid = document.querySelector(".card-grid");
-  const cards = Array.from(document.querySelectorAll(".card"));
+    sortSelect.addEventListener("change", () => {
+      const grid = document.querySelector(".card-grid");
+      const cards = Array.from(document.querySelectorAll(".card"));
 
-  const mode = sortSelect.value;
+      const mode = sortSelect.value;
 
-  cards.sort((a, b) => {
-    const dateA = new Date(a.dataset.date);
-    const dateB = new Date(b.dataset.date);
-    const catA = a.querySelector(".card-topline").textContent.trim();
-    const catB = b.querySelector(".card-topline").textContent.trim();
+      cards.sort((a, b) => {
+        const dateA = new Date(a.dataset.date);
+        const dateB = new Date(b.dataset.date);
+        const catA = a.querySelector(".card-topline").textContent.trim();
+        const catB = b.querySelector(".card-topline").textContent.trim();
 
-    if (mode === "recent") {
-      return dateB - dateA; // newest first
-    } 
-    else if (mode === "oldest") {
-      return dateA - dateB; // oldest first
-    } 
-    else if (mode === "category") {
-      return catA.localeCompare(catB); // A–Z
-    }
-    else if (mode === "categoryZA") {
-      return catB.localeCompare(catA); // Z–A
-    }
+        if (mode === "recent") {
+          return dateB - dateA; // newest first
+        } 
+        else if (mode === "oldest") {
+          return dateA - dateB; // oldest first
+        } 
+        else if (mode === "category") {
+          return catA.localeCompare(catB); // A–Z
+        }
+        else if (mode === "categoryZA") {
+          return catB.localeCompare(catA); // Z–A
+        }
 
-    return 0;
-  });
+        return 0;
+      });
 
-  cards.forEach(card => grid.appendChild(card));
-});
-    
+      cards.forEach(card => grid.appendChild(card));
+    });
   </script>
 
 </body>
